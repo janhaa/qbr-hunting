@@ -1,17 +1,8 @@
-local VORPCore = {}
 local peltz = {}
+QBCore = exports['qbr-core']:GetCoreObject()
 
-Citizen.CreateThread(function()
-    while not VORPCore do        
-        TriggerEvent("getCore", function(core)
-            VORPCore = core
-        end)
-        Citizen.Await(200)
-    end
-end)
-
-RegisterNetEvent("vorp:SelectedCharacter") -- NPC loads after selecting character
-AddEventHandler("vorp:SelectedCharacter", function(charid)
+RegisterNetEvent("QBCore:Client:OnPlayerLoaded") -- NPC loads after selecting character
+AddEventHandler("QBCore:Client:OnPlayerLoaded", function(charid)
     startButchers()
 end)
 
