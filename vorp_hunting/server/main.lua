@@ -1,3 +1,5 @@
+QBCore = exports['qbr-core']:GetCoreObject()
+
 RegisterServerEvent("qbr-hunting:giveReward")
 AddEventHandler("qbr-hunting:giveReward", function(givenItem, money, gold, rolPoints, xp)
     local Player = QBCore.Functions.GetPlayer(source)
